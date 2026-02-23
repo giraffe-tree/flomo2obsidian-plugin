@@ -97,10 +97,11 @@ function main() {
   const manifest = JSON.parse(readFileSync(manifestPath, "utf-8"));
   const pluginId = manifest.id ?? "plugin";
   const version = manifest.version ?? "0.0.0";
-  const bundleDirName = `${pluginId}-${version}`;
+  const bundleDirName = pluginId;
   const bundleDir = path.join(tempDir, bundleDirName);
+  const outputBaseName = `${pluginId}-${version}`;
   const outputName =
-    format === "zip" ? `${bundleDirName}.zip` : `${bundleDirName}.tar.gz`;
+    format === "zip" ? `${outputBaseName}.zip` : `${outputBaseName}.tar.gz`;
   const outputPath = path.join(outputDir, outputName);
 
   const packageEntries = ["main.js", "manifest.json", "versions.json", "img"];

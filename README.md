@@ -2,6 +2,11 @@
 
 将 [flomo](https://flomoapp.com/) 笔记桥接到 Obsidian 的插件。
 
+## 最新版本
+
+- `1.0.1`
+- 发布包解压后的目录名固定为 `flomo-bridge`（不包含版本号）
+
 ## 功能特性
 
 - ✅ **增量同步** - 只同步新增/修改的笔记，避免重复写入
@@ -20,8 +25,8 @@
 ### 1) 从 GitHub Release 下载（推荐）
 
 1. 打开 [Releases 页面](https://github.com/giraffe-tree/flomo2obsidian-plugin/releases/latest)
-2. 下载适合你的压缩包（`zip` 或 `tar.gz`）
-3. 解压后得到插件目录（包含 `main.js`、`manifest.json`、`versions.json` 和 `img/`）
+2. 下载 `1.0.1` 对应的压缩包（`zip` 或 `tar.gz`）
+3. 解压后得到插件目录 `flomo-bridge`（包含 `main.js`、`manifest.json`、`versions.json` 和 `img/`）
 4. 将解压后的目录放到：
 
 `{你的 Obsidian 项目目录}/.obsidian/plugins/flomo-bridge`
