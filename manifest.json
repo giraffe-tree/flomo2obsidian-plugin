@@ -1,0 +1,11 @@
+{
+  "id": "flomo-bridge",
+  "name": "Flomo Bridge",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "将 flomo 笔记桥接到 Obsidian vault",
+  "author": "Ernest",
+  "authorUrl": "https://github.com/yourname",
+  "fundingUrl": "https://buymeacoffee.com/yourname",
+  "isDesktopOnly": false
+}
