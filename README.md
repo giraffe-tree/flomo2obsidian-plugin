@@ -13,7 +13,7 @@
 
 配置展示页面
 
-
+![setup](./docs/image.png)
 
 ## 安装方法
 
