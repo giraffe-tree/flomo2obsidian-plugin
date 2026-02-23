@@ -17,10 +17,28 @@
 
 ## 安装方法
 
-### 1) 准备构建
+### 1) 从 GitHub Release 下载（推荐）
 
-1. 克隆或下载本仓库到本地
-2. 进入插件目录，安装依赖并构建：
+1. 打开 [Releases 页面](https://github.com/giraffe-tree/flomo2obsidian-plugin/releases/latest)
+2. 下载适合你的压缩包（`zip` 或 `tar.gz`）
+3. 解压后得到插件目录（包含 `main.js`、`manifest.json`、`versions.json` 和 `img/`）
+4. 将解压后的目录放到：
+
+`{你的 Obsidian 项目目录}/.obsidian/plugins/flomo-bridge`
+
+> 目录名请保持为 `flomo-bridge`，不要改名。
+
+### 2) 部署后自检
+
+```bash
+ls -la /path/to/your/vault/.obsidian/plugins/flomo-bridge/img/start_setup.gif
+```
+
+若能看到该文件，再重启 Obsidian，或按 `Cmd/Ctrl + P` 执行 `Reload app without saving`，然后在 `设置 → 第三方插件` 启用 "Flomo Bridge"。
+
+### 3) 从源码构建（可选）
+
+如果你希望自行构建最新版，可使用以下步骤：
 
 ```bash
 cd flomo2obsidian-plugin
@@ -28,42 +46,12 @@ npm install
 npm run build
 ```
 
-### 2) 部署产物清单（必须完整）
-
-部署到 vault 的 `.obsidian/plugins/flomo-bridge/` 时，至少需要以下文件：
+构建完成后，将以下文件/目录复制到 `{你的 Obsidian 项目目录}/.obsidian/plugins/flomo-bridge`：
 
 - `main.js`
 - `manifest.json`
 - `versions.json`
-- `img/start_setup.gif`（即 `img/` 目录必须一起带上）
-
-### 3) 开发部署（推荐）
-
-直接复制整个插件目录，最不容易漏静态资源：
-
-```bash
-# 假设 vault 路径是 /path/to/your/vault
-cp -r . /path/to/your/vault/.obsidian/plugins/flomo-bridge
-```
-
-### 4) 发布部署（最小文件集）
-
-只复制运行必需文件时，请显式包含 `img/`：
-
-```bash
-# 假设 vault 路径是 /path/to/your/vault
-mkdir -p /path/to/your/vault/.obsidian/plugins/flomo-bridge/img
-cp main.js manifest.json versions.json /path/to/your/vault/.obsidian/plugins/flomo-bridge/
-cp img/start_setup.gif /path/to/your/vault/.obsidian/plugins/flomo-bridge/img/
-```
-
-### 5) 部署后自检
-
-```bash
-ls -la /path/to/your/vault/.obsidian/plugins/flomo-bridge/img/start_setup.gif
-```
-
-若能看到该文件，再重启 Obsidian，或按 `Cmd/Ctrl + P` 执行 `Reload app without saving`，然后在 `设置 → 第三方插件` 启用 "Flomo Bridge"。
+- `img/`
 
 ## 配置说明
 
@@ -132,7 +120,7 @@ source: "android"
 ## 文件结构
 
 ```
-flomo/Inbox/
+flomo
 ├── 2024-01-01_标签_摘要_slug1.md
 ├── 2024-01-02_标签_摘要_slug2.md
 └── attachments/
@@ -189,6 +177,9 @@ npm run build
 
 # 版本更新
 npm version patch
+
+# 打包
+npm run package:all
 ```
 
 ## 技术说明
